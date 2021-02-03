@@ -1,0 +1,4 @@
+include ':SoundTouch'
+include ':FmodSound'
+include ':app'
+rootProject.name = "ChangeVoice"
