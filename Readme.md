@@ -2,7 +2,7 @@
 
 Android端音频变声库FMOD&SoundTouch使用Demo.
 
-[Android端音频变声库解决方案]（https://demon.blog.csdn.net/article/details/113585385）
+[Android端音频变声库解决方案](https://demon.blog.csdn.net/article/details/113585385)
 
 
 #### 注意
