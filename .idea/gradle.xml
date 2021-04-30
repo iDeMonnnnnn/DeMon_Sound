@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/FmodSound" />
+            <option value="$PROJECT_DIR$/SoundCoding" />
             <option value="$PROJECT_DIR$/SoundTouch" />
             <option value="$PROJECT_DIR$/app" />
           </set>

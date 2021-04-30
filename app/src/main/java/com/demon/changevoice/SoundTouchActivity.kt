@@ -1,35 +1,40 @@
 package com.demon.changevoice
 
 import android.os.Bundle
-import android.os.Environment
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.demon.changevoice.databinding.ActivitySoundTouchBinding
-import com.demon.fmodsound.FmodSound
+import com.demon.changevoice.record.PlayDialogFragment
+import com.demon.soundcoding.AmrToPcm
+import com.demon.soundcoding.AmrToWav
 import com.pinealgland.soundtouch.SoundTouch
 import kotlinx.coroutines.GlobalScope
-import org.fmod.FMOD
 import java.io.File
 
 class SoundTouchActivity : AppCompatActivity() {
+    private val TAG = "SoundTouchActivity"
     private lateinit var binding: ActivitySoundTouchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySoundTouchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        FMOD.init(this)
-        val dir = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.absolutePath
-        val path = "$dir/aaa.wav"
+        var path = intent.getStringExtra("path") ?: ""
+        Log.i(TAG, "onCreate: $path")
         val file = File(path)
         if (!file.exists()) {
-            Toast.makeText(this, "请添加录音文件！", Toast.LENGTH_SHORT).show()
+            showToast("录音文件不存在，请重新录制！")
+            finish()
+        } else {
+            if (path.endsWith(".amr")) {
+                path = AmrToPcm.makeAmrToPcm(path, false)
+            }
+            binding.tvPath.text = "音频文件:$path"
         }
         binding.buttonProcess.setOnClickListener {
             GlobalScope.launchIO {
                 try {
                     val pitch = binding.editTextPitch.text.toString().toFloat()
-                    // button "process" pushed
-                    process(path, "$dir/${System.currentTimeMillis()}.wav", pitch)
+                    process(path, "${getRecordFilePath()}/${System.currentTimeMillis()}", pitch)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -37,28 +42,24 @@ class SoundTouchActivity : AppCompatActivity() {
         }
     }
 
-    fun process(path: String, savePath: String, pitch: Float) {
+    private fun process(path: String, savePath: String, pitch: Float) {
         try {
             val st = SoundTouch()
             st.setTempo(1.0f)
+            st.setSpeed(1.0f)
             st.setPitchSemiTones(pitch)
             val res = st.processFile(path, savePath)
-            if (res == 0) {
-                FmodSound.playSound(savePath, FmodSound.MODE_NORMAL)
-            } else {
-                val err = SoundTouch.getErrorString()
-                GlobalScope.launchUI {
-                    Toast.makeText(this, err, Toast.LENGTH_LONG).show()
+            GlobalScope.launchUI {
+                if (res == 0) {
+                    binding.tvChange.text = "变声:$savePath"
+                    PlayDialogFragment.newInstance(savePath).showAllowingStateLoss(supportFragmentManager)
+                } else {
+                    showToast(SoundTouch.getErrorString())
                 }
             }
         } catch (e: Exception) {
             e.printStackTrace()
 
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        FMOD.close()
     }
 }

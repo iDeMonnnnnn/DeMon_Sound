@@ -12,8 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/Theme.ChangeVoice">
-        <activity android:name=".SoundFmodActivity"/>
+        <activity android:name=".SoundFmodActivity" />
         <activity android:name=".SoundTouchActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -22,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".record.RecordingService" />
     </application>
 
 </manifest>
