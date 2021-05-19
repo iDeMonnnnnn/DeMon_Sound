@@ -9,21 +9,68 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="音调半音:(范围-12~12)"
+        android:text="音调[-12,12]---当前:0.0"
         android:textAppearance="?android:attr/textAppearanceMedium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextPitch"
+    <SeekBar
+        android:id="@+id/seekPitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="24"
+        android:min="0"
+        android:progress="12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textPitch" />
+
+    <TextView
+        android:id="@+id/textTempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:ems="5"
-        android:inputType="text"
-        android:text="6"
+        android:layout_marginTop="50dp"
+        android:text="时间(0~10]---当前：1.0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPitch" />
+        app:layout_constraintTop_toBottomOf="@id/seekPitch" />
+
+    <SeekBar
+        android:id="@+id/seekTempo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="100"
+        android:min="1"
+        android:progress="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTempo" />
+
+    <TextView
+        android:id="@+id/textSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:text="速度(0,10]---当前:1.0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekTempo" />
+
+    <SeekBar
+        android:id="@+id/seekSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="100"
+        android:min="1"
+        android:progress="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSpeed" />
 
     <TextView
         android:id="@+id/tv_path"
@@ -32,7 +79,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPitch" />
+        app:layout_constraintTop_toBottomOf="@id/seekSpeed" />
 
     <Button
         android:id="@+id/buttonProcess"
@@ -53,4 +100,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonProcess" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

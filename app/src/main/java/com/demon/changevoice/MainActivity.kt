@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var recordType = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initPermission()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -82,11 +83,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, SoundTouchActivity::class.java).putExtra("path", path))
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        initPermission()
     }
 
     override fun onDestroy() {

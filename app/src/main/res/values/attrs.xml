@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FNRadioGroup">
+        <attr name="checkedButtonId" format="integer" />
+        <attr name="childMarginLeft" format="dimension" />
+        <attr name="childMarginRight" format="dimension" />
+        <attr name="childMarginTop" format="dimension" />
+        <attr name="childMarginBottom" format="dimension" />
+    </declare-styleable>
+</resources>

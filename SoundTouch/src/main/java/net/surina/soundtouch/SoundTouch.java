@@ -9,7 +9,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.pinealgland.soundtouch;
+package net.surina.soundtouch;
 
 public final class SoundTouch
 {

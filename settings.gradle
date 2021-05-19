@@ -1,5 +1,5 @@
 include ':SoundCoding'
-include ':SoundTouch'
 include ':FmodSound'
 include ':app'
 rootProject.name = "DeMon_Sound"
+include ':SoundTouch'

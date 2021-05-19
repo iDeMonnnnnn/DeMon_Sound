@@ -94,9 +94,22 @@
         android:layout_marginTop="20dp"
         android:text="使用SoundTouch变声"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tips"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bntFmod" />
 
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="注意：\n
+        1.FMOD/SoundTouch变声都只支持wav格式，且输出格式也是wav格式。\n
+        2.SoundTouch变声与输出是同时进行的，只能播放输出文件。\n
+        4.FMOD自带播放功能，且变声与播放是同时进行的，即变声的同时也会播放。\n
+        5.FMOD变声播放与变声输出不能同时进行，只能先变声输出，再用普通模式播放输出文件。"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
