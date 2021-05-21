@@ -23,12 +23,12 @@ allprojects {
 [latest_version](https://github.com/iDeMonnnnnn/DeMon_Sound/releases)
 ```
 dependencies {
-      //使用FMOD变声，请添加此库
-	  implementation 'com.github.iDeMonnnnnn.DeMon_Sound:FmodSound:$latest_version'
-	  //使用SoundTouch变声，请添加此库
-	  implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundTouch:$latest_version'
-	  //使用视频转码功能，请添加此库
-      implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
+//使用FMOD变声，请添加此库
+implementation 'com.github.iDeMonnnnnn.DeMon_Sound:FmodSound:$latest_version'
+//使用SoundTouch变声，请添加此库
+implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundTouch:$latest_version'
+//使用视频转码功能，请添加此库
+implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
 }
 ```
 
