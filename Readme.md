@@ -36,6 +36,10 @@ implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
 
 [WIKI](https://github.com/iDeMonnnnnn/DeMon_Sound/wiki)
 
+##### 示例代码
+
+[App变声示例](https://github.com/iDeMonnnnnn/DeMon_Sound/tree/master/app)
+
 ### MIT License
 
 ```
