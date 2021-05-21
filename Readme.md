@@ -5,7 +5,7 @@
 Android端基于[FMOD](https://www.fmod.com/)/[SoundTouch](https://gitlab.com/soundtouch/soundtouch)的简单音频变声解决方案。
 
 1. FmodSound库提供了基于FMOD的7种变声方案。
-2. SoundTouch库提供了音调&变声自由设置的变声方案。
+2. SoundTouch库提供了音调&变速设置的变声方案。
 3. SoundCoding库提供了```AMR<-->PCM<-->WAV```互转方案。
 
 #### 开始使用
