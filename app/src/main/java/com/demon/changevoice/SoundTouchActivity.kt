@@ -91,8 +91,9 @@ class SoundTouchActivity : AppCompatActivity() {
     }
 
     /**
-     * 执行变声，需要在子线程中执行
-     * @param path 音频文件陆宇
+     * 执行变声，耗时，需要在子线程中执行
+     *
+     * @param path 音频文件
      * @param savePath 变声后文件保存路径
      */
     private fun process(path: String, savePath: String) {
