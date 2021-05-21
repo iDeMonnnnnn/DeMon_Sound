@@ -54,7 +54,7 @@ class SoundTouchActivity : AppCompatActivity() {
         binding.seekTempo.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 tempo = progress.toFloat() / 10
-                binding.textTempo.text = "时间(0~10)---当前:$tempo"
+                binding.textTempo.text = "速度(0~10)---当前:$tempo"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -67,8 +67,8 @@ class SoundTouchActivity : AppCompatActivity() {
         })
         binding.seekSpeed.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                speed = progress.toFloat()/10
-                binding.textSpeed.text = "速度(0~10)---当前:$speed"
+                speed = progress.toFloat() / 10
+                binding.textSpeed.text = "音调&速度(0~10)---当前:$speed"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -90,12 +90,17 @@ class SoundTouchActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * 执行变声，需要在子线程中执行
+     * @param path 音频文件陆宇
+     * @param savePath 变声后文件保存路径
+     */
     private fun process(path: String, savePath: String) {
         try {
             val st = SoundTouch()
             st.setTempo(tempo) //速度
-            st.setSpeed(speed) //速度&变调
-            st.setPitchSemiTones(pitch) //音调变调
+            st.setSpeed(speed) //速度&音调
+            st.setPitchSemiTones(pitch) //音调
             val res = st.processFile(path, savePath)
             GlobalScope.launchUI {
                 if (res == 0) {

@@ -23,6 +23,7 @@ class SoundFmodActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //初始化
         FMOD.init(this)
         binding = ActivitySoundFmodBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -73,6 +74,7 @@ class SoundFmodActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        //释放
         FMOD.close()
     }
 }
