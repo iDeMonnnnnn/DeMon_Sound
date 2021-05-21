@@ -33,7 +33,12 @@ object FmodSound {
     }
 
 
-    external fun saveSound(path: String, type: Int, savePath: String): Int
+    /**
+     * 变声并播放，耗时，需要在子线程中执行
+     *
+     * @param path 音频路径，只支持WAV格式
+     * @param type 变声音效类型，默认=0即普通播放无变声效果
+     */
     external fun playSound(path: String, type: Int = MODE_NORMAL): Int
 
     external fun stopPlay()
@@ -41,6 +46,22 @@ object FmodSound {
     external fun pausePlay()
     external fun isPlaying(): Boolean
 
+    /**
+     * 变声保存，耗时，需要在子线程中执行
+     *
+     * @param path 音频路径，只支持WAV格式
+     * @param type 变声音效类型，默认=0即普通播放无变声效果
+     * @param savePath 变声后保存的路径，输出为WAV格式
+     */
+    external fun saveSound(path: String, type: Int, savePath: String): Int
+
+    /**
+     * 变声保存
+     * @param path 音频路径，只支持WAV格式
+     * @param type 变声音效类型，默认=0即普通播放无变声效果
+     * @param savePath 变声后保存的路径，输出为WAV格式
+     * @param listener 变声结果监听，根据回调可以在变声成功后播放
+     */
     fun saveSoundAsync(path: String, type: Int, savePath: String, listener: ISaveSoundListener? = null) {
         try {
             if (isPlaying()) {
