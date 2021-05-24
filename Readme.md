@@ -38,8 +38,9 @@ implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
 
 ##### 示例代码
 
-[示例App](https://raw.githubusercontent.com/iDeMonnnnnn/DeMon_Sound/master/app-release.apk)
-[示例代码](https://github.com/iDeMonnnnnn/DeMon_Sound/tree/master/app)
+[App示例代码](https://github.com/iDeMonnnnnn/DeMon_Sound/tree/master/app)
+
+[Apk体验](https://raw.githubusercontent.com/iDeMonnnnnn/DeMon_Sound/master/app-release.apk)
 
 ##### 截图
 
