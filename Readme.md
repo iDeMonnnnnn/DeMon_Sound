@@ -10,6 +10,10 @@ Android端基于[FMOD](https://www.fmod.com/)/[SoundTouch](https://gitlab.com/so
 
 #### 开始使用
 
+##### 使用文档
+
+[WIKI](https://github.com/iDeMonnnnnn/DeMon_Sound/wiki)
+
 ##### 添加依赖
 
 ```
@@ -31,10 +35,6 @@ implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundTouch:$latest_version'
 implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
 }
 ```
-
-##### 使用文档
-
-[WIKI](https://github.com/iDeMonnnnnn/DeMon_Sound/wiki)
 
 ##### 示例代码
 
