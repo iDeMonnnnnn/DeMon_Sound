@@ -38,7 +38,15 @@ implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:$latest_version'
 
 ##### 示例代码
 
-[App变声示例](https://github.com/iDeMonnnnnn/DeMon_Sound/tree/master/app)
+[示例App ](https://raw.githubusercontent.com/iDeMonnnnnn/DeMon_Sound/master/app-release.apk)
+
+[示例代码](https://github.com/iDeMonnnnnn/DeMon_Sound/tree/master/app)
+
+##### 截图
+
+![](https://github.com/iDeMonnnnnn/DeMon_Sound/blob/master/screen/111.jpg?raw=true)
+![](https://github.com/iDeMonnnnnn/DeMon_Sound/blob/master/screen/222.jpg?raw=true)
+![](https://github.com/iDeMonnnnnn/DeMon_Sound/blob/master/screen/333.jpg?raw=true)
 
 ### MIT License
 
