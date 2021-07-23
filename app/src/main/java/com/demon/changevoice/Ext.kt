@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.io.File
 
 /**
  * @author DeMon
@@ -46,7 +47,15 @@ fun Context.getRecordFilePath(type: Int = 0): String {
         2 -> ".pcm"
         else -> ".amr"
     }
-    return this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.absolutePath + "/Record/${System.currentTimeMillis()}$suffix"
+    val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.absolutePath + "/Record")
+    if (!file.exists()) {
+        file.mkdirs()
+    }
+    val path = File(file, "${System.currentTimeMillis()}$suffix")
+    if (!path.exists()) {
+        file.createNewFile()
+    }
+    return path.absolutePath
 }
 
 
