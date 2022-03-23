@@ -43,10 +43,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.permissionx.guolindev:permissionx:1.4.0'
-    //implementation project(path: ':FmodSound')
-    //implementation project(path: ':SoundTouch')
-    //implementation project(path: ':SoundCoding')
-    implementation 'com.github.iDeMonnnnnn.DeMon_Sound:FmodSound:1.0'
-    implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundTouch:1.0'
-    implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:1.0'
+    implementation project(path: ':FmodSound')
+    implementation project(path: ':SoundTouch')
+    implementation project(path: ':SoundCoding')
+    //implementation 'com.github.iDeMonnnnnn.DeMon_Sound:FmodSound:1.0'
+    //implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundTouch:1.0'
+    //implementation 'com.github.iDeMonnnnnn.DeMon_Sound:SoundCoding:1.0'
 }

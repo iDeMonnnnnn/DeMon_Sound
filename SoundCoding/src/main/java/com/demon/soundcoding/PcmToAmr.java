@@ -73,7 +73,7 @@ public class PcmToAmr {
             do {
                 int inputBufIndex = 0;
                 while (inputBufIndex != -1 && hasMoreData) {
-                    inputBufIndex = encoder.dequeueInputBuffer(0);
+                    inputBufIndex = encoder.dequeueInputBuffer(1000);
                     if (inputBufIndex >= 0) {
                         ByteBuffer dstBuf = codecInputBuffers[inputBufIndex];
                         dstBuf.clear();
@@ -92,7 +92,7 @@ public class PcmToAmr {
                 // Drain audio
                 int outputBufIndex = 0;
                 while (outputBufIndex != MediaCodec.INFO_TRY_AGAIN_LATER) {
-                    outputBufIndex = encoder.dequeueOutputBuffer(outBuffInfo, 0);
+                    outputBufIndex = encoder.dequeueOutputBuffer(outBuffInfo, -1);
                     if (outputBufIndex >= 0) {
                         ByteBuffer encodedData = codecOutputBuffers[outputBufIndex];
                         encodedData.position(outBuffInfo.offset);

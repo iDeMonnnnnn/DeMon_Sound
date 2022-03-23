@@ -101,7 +101,7 @@ public class AmrToPcm {
                         mediaExtractor.advance();
                     }
                     //出队输出数据
-                    int outIndex = decoder.dequeueOutputBuffer(bufferInfo, 1000);
+                    int outIndex = decoder.dequeueOutputBuffer(bufferInfo, -1);
                     switch (outIndex) {
                         case MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED: {
                             Log.d(TAG, "INFO_OUT_PUT_BUFFERS_CHANGED");
